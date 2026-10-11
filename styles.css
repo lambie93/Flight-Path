@@ -1,0 +1,1342 @@
+:root {
+
+    --bg: #E8EEF4;
+
+    --ink: #102438;
+
+    --muted: #58697F;
+
+    --line: #C9D4E0;
+
+    --field: #F4F7FA;
+
+    --accent: #F2C230;
+
+
+
+    --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+
+    --body: "Barlow", Arial, sans-serif;
+
+}
+
+
+
+*,
+
+*::before,
+
+*::after {
+
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+
+    margin: 0;
+
+    padding: 40px 24px;
+
+    background: var(--bg);
+
+    color: var(--ink);
+
+    font: 17px/1.5 var(--body);
+
+}
+
+
+
+main {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+}
+
+
+
+h1 {
+
+    margin: 0 0 12px;
+
+    font: 700 clamp(38px, 7vw, 60px)/1 var(--display);
+
+    letter-spacing: 0.2px;
+
+}
+
+
+
+.description {
+
+    max-width: 100ch;
+
+    margin: 0 0 28px;
+
+    color: var(--muted);
+
+}
+
+
+
+.form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+
+
+.field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-width: 0;
+
+}
+
+
+
+.field > label,
+
+.field > .label {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+
+
+.route {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+
+    gap: 10px;
+
+    align-items: end;
+
+}
+
+
+
+input[type="text"],
+
+input[type="number"] {
+
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 11px 12px;
+
+    border: 1.5px solid var(--line);
+
+    border-radius: 8px;
+
+    background: var(--field);
+
+    color: var(--ink);
+
+    font: inherit;
+
+}
+
+
+
+input[type="text"]:focus,
+
+input[type="number"]:focus {
+
+    border-color: var(--ink);
+
+}
+
+
+
+button {
+
+    font: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+
+.swap {
+
+    min-height: 46px;
+
+    padding: 0 14px;
+
+    border: 1.5px solid var(--line);
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--ink);
+
+    transition: background 160ms ease, color 160ms ease;
+
+}
+
+
+
+.swap:hover {
+
+    background: var(--ink);
+
+    color: var(--bg);
+
+}
+
+
+
+.options {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 2fr) minmax(100px, 1fr) auto;
+
+    gap: 18px;
+
+    align-items: end;
+
+}
+
+
+
+.radio {
+
+    display: flex;
+
+    min-height: 46px;
+
+    overflow: hidden;
+
+    border: 1.5px solid var(--ink);
+
+    border-radius: 8px;
+
+}
+
+
+
+.radio label {
+
+    position: relative;
+
+    display: flex;
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+
+.radio input {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0;
+
+    opacity: 0;
+
+    cursor: pointer;
+
+}
+
+
+
+.radio span {
+
+    display: flex;
+
+    flex: 1;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 8px 4px;
+
+    font-size: 14.5px;
+
+    font-weight: 600;
+
+    line-height: 1.15;
+
+    text-align: center;
+
+    cursor: pointer;
+
+}
+
+
+
+.radio input:checked + span {
+
+    background: var(--ink);
+
+    color: var(--field);
+
+}
+
+
+
+.radio label + label {
+
+    border-left: 1px solid var(--line);
+
+}
+
+
+
+.radio input:focus-visible + span {
+
+    position: relative;
+
+    z-index: 1;
+
+    outline: 3px solid var(--accent);
+
+    outline-offset: -4px;
+
+}
+
+
+
+.check {
+
+    min-height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+
+.check label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+
+.check input {
+
+    width: 18px;
+
+    height: 18px;
+
+    margin: 0;
+
+    accent-color: var(--ink);
+
+}
+
+
+
+.actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 2px;
+
+}
+
+
+
+.enter-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    min-width: 150px;
+
+    min-height: 48px;
+
+    padding: 11px 22px;
+
+    border: 2px solid var(--ink);
+
+    border-radius: 8px;
+
+    background: var(--accent);
+
+    color: var(--ink);
+
+    font-family: var(--body);
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    transition:
+
+        background 160ms ease,
+
+        color 160ms ease,
+
+        transform 160ms ease;
+
+}
+
+
+
+.enter-btn span {
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    transition: transform 160ms ease;
+
+}
+
+
+
+.enter-btn:hover {
+
+    background: var(--ink);
+
+    color: var(--bg);
+
+}
+
+
+
+.enter-btn:hover span {
+
+    transform: translateX(4px);
+
+}
+
+
+
+.enter-btn:active {
+
+    transform: translateY(1px);
+
+}
+
+
+
+input:focus-visible,
+
+button:focus-visible {
+
+    outline: 3px solid var(--accent);
+
+    outline-offset: 3px;
+
+}
+
+
+
+.enter-btn:focus-visible {
+
+    outline-color: var(--ink);
+
+    outline-offset: 3px;
+
+}
+
+
+
+#result {
+
+    margin-top: 24px;
+
+}
+
+
+
+#more,
+
+#cabins {
+
+    margin-top: 32px;
+
+}
+
+
+
+#more h2,
+
+#cabins h2 {
+
+    margin-bottom: 14px;
+
+}
+
+
+
+.empty {
+
+    padding: 24px;
+
+    border: 1.5px dashed var(--line);
+
+    border-radius: 12px;
+
+    color: var(--muted);
+
+    background: var(--field);
+
+}
+
+
+
+@media (max-width: 650px) {
+
+    body {
+
+        padding: 28px 16px;
+
+    }
+
+
+
+    .route {
+
+        grid-template-columns: minmax(0, 1fr);
+
+    }
+
+
+
+    .swap {
+
+        justify-self: start;
+
+    }
+
+
+
+    .options {
+
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+        gap: 16px 12px;
+
+    }
+
+
+
+    .options > .field:first-child {
+
+        grid-column: 1 / -1;
+
+    }
+
+
+
+    .radio span {
+
+        padding: 9px 3px;
+
+        font-size: 13px;
+
+    }
+
+
+
+    .actions {
+
+        justify-content: stretch;
+
+    }
+
+
+
+    .enter-btn {
+
+        width: 100%;
+
+        min-height: 50px;
+
+    }
+
+}
+
+
+
+@media (max-width: 360px) {
+
+    body {
+
+        padding: 24px 12px;
+
+    }
+
+
+
+    .options {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .options > .field:first-child {
+
+        grid-column: auto;
+
+    }
+
+
+
+    .radio span {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+
+    *::before,
+
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+    }
+
+}
+
+
+
+
+
+/* =========================================
+
+   FLIGHTPRINT — BOARDING PASS RESULTS
+
+   Preserves the original ticket design
+
+   ========================================= */
+
+
+
+:root {
+
+    --card: #FFFFFF;
+
+    --paper: var(--bg);
+
+}
+
+
+
+/* Results container */
+
+#result {
+
+    width: 100%;
+
+    margin-top: 24px;
+
+    color: var(--ink);
+
+}
+
+
+
+/* Ticket layout */
+
+.pass {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 250px;
+
+    position: relative;
+
+    margin: 0 0 34px;
+
+    overflow: visible;
+
+    background: var(--card);
+
+    border: 1.5px solid var(--line);
+
+    border-radius: 16px;
+
+}
+
+
+
+/* Main flight information */
+
+.pass-main {
+
+    min-width: 0;
+
+    padding: 26px 28px 24px;
+
+}
+
+
+
+.legs {
+
+    display: grid;
+
+    grid-template-columns: auto minmax(60px, 1fr) auto;
+
+    align-items: center;
+
+    gap: 16px;
+
+    min-width: 0;
+
+}
+
+
+
+/* Airport codes */
+
+.code {
+
+    font-family: var(--display);
+
+    font-size: clamp(52px, 11vw, 84px);
+
+    font-weight: 700;
+
+    line-height: 0.95;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+
+}
+
+
+
+.where {
+
+    margin-top: 6px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+
+/* Curved flight path and airplane SVG */
+
+.arc {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    min-width: 60px;
+
+    overflow: visible;
+
+}
+
+
+
+.arc path {
+
+    fill: none;
+
+    stroke: var(--ink);
+
+    stroke-width: 2;
+
+    stroke-dasharray: 2 6;
+
+    stroke-linecap: round;
+
+}
+
+
+
+.arc .dot,
+
+.arc .plane {
+
+    fill: var(--ink);
+
+    stroke: none;
+
+}
+
+
+
+/* Route details */
+
+.meta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px 26px;
+
+    margin-top: 22px;
+
+    padding-top: 16px;
+
+    border-top: 1.5px solid var(--line);
+
+    font-size: 15.5px;
+
+}
+
+
+
+.meta b {
+
+    font-weight: 600;
+
+}
+
+
+
+/* Highlighted CO2 ticket stub */
+
+.pass-stub {
+
+    display: flex;
+
+    min-width: 0;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 26px 24px;
+
+    border-left: 2px dashed var(--line);
+
+    border-radius: 0 14px 14px 0;
+
+    background: linear-gradient(
+
+        0deg,
+
+        rgba(242, 194, 48, 0.14),
+
+        rgba(242, 194, 48, 0.14)
+
+    );
+
+}
+
+
+
+.stub-lbl {
+
+    margin: 0;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+
+
+/* Large emissions figure */
+
+.big {
+
+    display: flex;
+
+    align-items: baseline;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin: 6px 0 8px;
+
+    font-family: var(--display);
+
+    font-weight: 700;
+
+    line-height: 0.9;
+
+    font-variant-numeric: tabular-nums;
+
+}
+
+
+
+.big .n {
+
+    font-size: clamp(64px, 7vw, 92px);
+
+    letter-spacing: -1px;
+
+}
+
+
+
+.big .u {
+
+    font-size: 30px;
+
+}
+
+
+
+.stub-sub {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+}
+
+
+
+/* Semicircular ticket notches */
+
+.pass::before,
+
+.pass::after {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 2;
+
+    right: 239px;
+
+    width: 22px;
+
+    height: 22px;
+
+    border: 1.5px solid var(--line);
+
+    border-radius: 50%;
+
+    background: var(--paper);
+
+    pointer-events: none;
+
+}
+
+
+
+.pass::before {
+
+    top: -12px;
+
+    clip-path: inset(50% 0 0 0);
+
+}
+
+
+
+.pass::after {
+
+    bottom: -12px;
+
+    clip-path: inset(0 0 50% 0);
+
+}
+
+
+
+/* Invalid route / empty results */
+
+.empty {
+
+    margin-bottom: 34px;
+
+    padding: 28px;
+
+    border: 1.5px dashed var(--line);
+
+    border-radius: 16px;
+
+    background: var(--card);
+
+    color: var(--muted);
+
+}
+
+
+
+/* =========================================
+
+   EMISSIONS COMPARISON
+
+   ========================================= */
+
+
+
+#more {
+
+    margin-top: 32px;
+
+    margin-bottom: 36px;
+
+}
+
+
+
+#more h2 {
+
+    margin: 0 0 14px;
+
+    font-family: var(--display);
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    line-height: 1.1;
+
+}
+
+
+
+.equals {
+
+    margin: 0;
+
+    border-top: 1.5px solid var(--ink);
+
+}
+
+
+
+.equals > div {
+
+    display: grid;
+
+    grid-template-columns: 150px minmax(0, 1fr);
+
+    align-items: baseline;
+
+    gap: 16px;
+
+    padding: 14px 0;
+
+    border-bottom: 1.5px solid var(--line);
+
+}
+
+
+
+.equals dt {
+
+    font-family: var(--display);
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+}
+
+
+
+.equals dd {
+
+    margin: 0;
+
+    color: var(--muted);
+
+}
+
+
+
+/* Keep native hidden behavior reliable */
+
+[hidden] {
+
+    display: none !important;
+
+}
+
+
+
+/* =========================================
+
+   RESPONSIVE TICKET
+
+   ========================================= */
+
+
+
+@media (max-width: 700px) {
+
+    .pass {
+
+        grid-template-columns: minmax(0, 1fr);
+
+    }
+
+
+
+    .pass-main {
+
+        padding: 22px 20px;
+
+    }
+
+
+
+    .pass-stub {
+
+        padding: 24px 20px;
+
+        border-top: 2px dashed var(--line);
+
+        border-left: 0;
+
+        border-radius: 0 0 14px 14px;
+
+    }
+
+
+
+    /* Notches move to the horizontal divider */
+
+    .pass::before,
+
+    .pass::after {
+
+        top: auto;
+
+        right: auto;
+
+        bottom: calc(var(--stub-h, 190px) - 11px);
+
+    }
+
+
+
+    .pass::before {
+
+        left: -12px;
+
+        clip-path: inset(0 0 0 50%);
+
+    }
+
+
+
+    .pass::after {
+
+        right: -12px;
+
+        left: auto;
+
+        clip-path: inset(0 50% 0 0);
+
+    }
+
+
+
+    .big .n {
+
+        font-size: clamp(64px, 13vw, 92px);
+
+    }
+
+
+
+    .equals > div {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 4px;
+
+    }
+
+}
+
+
+
+/* Small phones */
+
+@media (max-width: 400px) {
+
+    .pass-main {
+
+        padding: 20px 14px;
+
+    }
+
+
+
+    .legs {
+
+        grid-template-columns: auto minmax(40px, 1fr) auto;
+
+        gap: 8px;
+
+    }
+
+
+
+    .code {
+
+        font-size: clamp(40px, 12vw, 56px);
+
+    }
+
+
+
+    .where {
+
+        font-size: 13px;
+
+    }
+
+
+
+    .arc {
+
+        min-width: 40px;
+
+    }
+
+
+
+    .meta {
+
+        gap: 8px 16px;
+
+        font-size: 14px;
+
+    }
+
+
+
+    .pass-stub {
+
+        padding: 22px 16px;
+
+    }
+
+
+
+    .big .n {
+
+        font-size: 64px;
+
+    }
+
+
+
+    .big .u {
+
+        font-size: 26px;
+
+    }
+
+}
+
+
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pass *,
+
+    .pass *::before,
+
+    .pass *::after {
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+    }
+
+}
+
