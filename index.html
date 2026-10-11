@@ -4,54 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flightprint</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
-    <script src="script.js" defer></script>
+
+    <script src="./script.js" defer></script>
 </head>
 <body>
 <main>
     <h1>How much CO<sub>2</sub> does your flight produce?</h1>
-    <p class="description">Pick your departure and destination airports. Then choose your cabin class, number of passengers, and trip type to estimate the carbon emissions of your flight.</p>
+
+    <p class="description">
+        Pick your departure and destination airports. Then choose your cabin
+        class, number of passengers, and trip type to estimate the carbon
+        emissions of your flight.
+    </p>
 
     <div class="form">
         <div class="route">
             <div class="field">
                 <label for="from">From</label>
-                <input id="from" name="from" type="text" list="airports" autocomplete="off" placeholder="Code, city or airport name" value="JFK (John F. Kennedy International Airport) - New York, NY, USA">
+                <input
+                    id="from"
+                    name="from"
+                    type="text"
+                    list="airports"
+                    autocomplete="off"
+                    placeholder="Code, city or airport name"
+                    value="JFK (John F. Kennedy International Airport) - New York, NY, USA"
+                >
             </div>
-        <button class="swap" id="swap" type="button">Swap</button>
-        <div class="field">
-            <label for="to">To</label>
-            <input id="to" name="to" type="text" list="airports" autocomplete="off" placeholder="Code, city or airport name" value="LAX (Los Angeles International Airport) - Los Angeles, CA, USA">
-        </div>
-    </div>
-    <datalist id="airports"></datalist>
 
-    <div class="options">
-        <div class="field" role="radiogroup" aria-labelledby="cabin-label">
-            <span class="label" id="cabin-label">Cabin</span>
-            <div class="radio">
-                <label><input type="radio" name="cabin" value="economy" checked><span>Economy</span></label>
-                <label><input type="radio" name="cabin" value="premium"><span>Premium Economy</span></label>
-                <label><input type="radio" name="cabin" value="business"><span>Business</span></label>
-                <label><input type="radio" name="cabin" value="first"><span>First</span></label>
+            <button class="swap" id="swap" type="button">Swap</button>
+
+            <div class="field">
+                <label for="to">To</label>
+                <input
+                    id="to"
+                    name="to"
+                    type="text"
+                    list="airports"
+                    autocomplete="off"
+                    placeholder="Code, city or airport name"
+                    value="LAX (Los Angeles International Airport) - Los Angeles, CA, USA"
+                >
             </div>
         </div>
-        <div class="field">
-            <label for="passengers">Passengers</label>
-            <input id="passengers" name="passengers" type="number" min="1" value="1" inputmode="numeric">
-        </div>
-        <div class="check">
-            <label><input type="checkbox" id="round" checked><span>Round Trip</span></label>
-        </div>
 
-        
-        <div class="actions">
-            <button type="button" id="enter" class="enter-btn">Enter <span aria-hidden="true">→</span></button>
-</div>
+        <datalist id="airports"></datalist>
 
+        <div class="options">
+            <div class="field" role="radiogroup" aria-labelledby="cabin-label">
+                <span class="label" id="cabin-label">Cabin</span>
+
+                <div class="radio">
+                    <label><input type="radio" name="cabin" value="economy" checked><span>Economy</span></label>
+                    <label><input type="radio" name="cabin" value="premium"><span>Premium Economy</span></label>
+                    <label><input type="radio" name="cabin" value="business"><span>Business</span></label>
+                    <label><input type="radio" name="cabin" value="first"><span>First</span></label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="passengers">Passengers</label>
+                <input id="passengers" name="passengers" type="number" min="1" value="1" inputmode="numeric">
+            </div>
+
+            <div class="check">
+                <label><input type="checkbox" id="round" checked><span>Round Trip</span></label>
+            </div>
+
+            <div class="actions">
+                <button type="button" id="enter" class="enter-btn">
+                    Enter <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </div>
     </div>
 
     <div id="result" aria-live="polite"></div>

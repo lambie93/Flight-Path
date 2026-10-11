@@ -668,20 +668,6 @@ button:focus-visible {
 
 }
 
-
-
-
-
-/* =========================================
-
-   FLIGHTPRINT — BOARDING PASS RESULTS
-
-   Preserves the original ticket design
-
-   ========================================= */
-
-
-
 :root {
 
     --card: #FFFFFF;
@@ -689,10 +675,6 @@ button:focus-visible {
     --paper: var(--bg);
 
 }
-
-
-
-/* Results container */
 
 #result {
 
@@ -703,10 +685,6 @@ button:focus-visible {
     color: var(--ink);
 
 }
-
-
-
-/* Ticket layout */
 
 .pass {
 
@@ -728,10 +706,6 @@ button:focus-visible {
 
 }
 
-
-
-/* Main flight information */
-
 .pass-main {
 
     min-width: 0;
@@ -739,8 +713,6 @@ button:focus-visible {
     padding: 26px 28px 24px;
 
 }
-
-
 
 .legs {
 
@@ -755,10 +727,6 @@ button:focus-visible {
     min-width: 0;
 
 }
-
-
-
-/* Airport codes */
 
 .code {
 
@@ -792,9 +760,6 @@ button:focus-visible {
 
 }
 
-
-
-/* Curved flight path and airplane SVG */
 
 .arc {
 
@@ -838,10 +803,6 @@ button:focus-visible {
 
 }
 
-
-
-/* Route details */
-
 .meta {
 
     display: flex;
@@ -867,10 +828,6 @@ button:focus-visible {
     font-weight: 600;
 
 }
-
-
-
-/* Highlighted CO2 ticket stub */
 
 .pass-stub {
 
@@ -912,10 +869,6 @@ button:focus-visible {
 
 }
 
-
-
-/* Large emissions figure */
-
 .big {
 
     display: flex;
@@ -948,15 +901,11 @@ button:focus-visible {
 
 }
 
-
-
 .big .u {
 
     font-size: 30px;
 
 }
-
-
 
 .stub-sub {
 
@@ -969,10 +918,6 @@ button:focus-visible {
     line-height: 1.4;
 
 }
-
-
-
-/* Semicircular ticket notches */
 
 .pass::before,
 
@@ -1000,8 +945,6 @@ button:focus-visible {
 
 }
 
-
-
 .pass::before {
 
     top: -12px;
@@ -1010,8 +953,6 @@ button:focus-visible {
 
 }
 
-
-
 .pass::after {
 
     bottom: -12px;
@@ -1019,10 +960,6 @@ button:focus-visible {
     clip-path: inset(0 0 50% 0);
 
 }
-
-
-
-/* Invalid route / empty results */
 
 .empty {
 
@@ -1040,16 +977,6 @@ button:focus-visible {
 
 }
 
-
-
-/* =========================================
-
-   EMISSIONS COMPARISON
-
-   ========================================= */
-
-
-
 #more {
 
     margin-top: 32px;
@@ -1057,8 +984,6 @@ button:focus-visible {
     margin-bottom: 36px;
 
 }
-
-
 
 #more h2 {
 
@@ -1074,8 +999,6 @@ button:focus-visible {
 
 }
 
-
-
 .equals {
 
     margin: 0;
@@ -1083,8 +1006,6 @@ button:focus-visible {
     border-top: 1.5px solid var(--ink);
 
 }
-
-
 
 .equals > div {
 
@@ -1102,8 +1023,6 @@ button:focus-visible {
 
 }
 
-
-
 .equals dt {
 
     font-family: var(--display);
@@ -1116,8 +1035,6 @@ button:focus-visible {
 
 }
 
-
-
 .equals dd {
 
     margin: 0;
@@ -1126,25 +1043,11 @@ button:focus-visible {
 
 }
 
-
-
-/* Keep native hidden behavior reliable */
-
 [hidden] {
 
     display: none !important;
 
 }
-
-
-
-/* =========================================
-
-   RESPONSIVE TICKET
-
-   ========================================= */
-
-
 
 @media (max-width: 700px) {
 
@@ -1234,10 +1137,6 @@ button:focus-visible {
 
 }
 
-
-
-/* Small phones */
-
 @media (max-width: 400px) {
 
     .pass-main {
@@ -1315,10 +1214,6 @@ button:focus-visible {
     }
 
 }
-
-
-
-/* Respect reduced-motion preferences */
 
 @media (prefers-reduced-motion: reduce) {
 
